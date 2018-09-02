@@ -38,26 +38,13 @@ target_data   = np.array([  [0],   [1],   [1],   [0]])
 # In[4]:
 
 
-usemore = False
-if usemore:
-    model = Sequential()
-    model.add(Dense(8, input_dim=2, activation=relu))
-    model.add(Dense(16, activation=relu))
-    model.add(Dense(1, activation=sigmoid))
-    model.compile(loss=mean_squared_error, optimizer=SGD(lr=1.0)) #mean_squared_error
+model = Sequential()
+model.add(Dense(8, input_dim=2, activation=sigmoid))
+model.add(Dense(1, activation=sigmoid))
+model.compile(loss=mean_squared_error, optimizer=SGD(lr=1))
 
 
 # In[5]:
-
-
-if not usemore:
-    model = Sequential()
-    model.add(Dense(8, input_dim=2, activation=sigmoid))
-    model.add(Dense(1, activation=sigmoid))
-    model.compile(loss=mean_squared_error, optimizer=SGD(lr=1))
-
-
-# In[6]:
 
 
 from IPython.display import SVG
@@ -70,8 +57,6 @@ SVG(model_to_dot(model,show_shapes=True,rankdir='LR').create(prog='dot', format=
 
 
 epochs = 2000
-if usemore:
-    epochs = 100
 model.fit(training_data, target_data, epochs=epochs)
 
 
@@ -95,7 +80,7 @@ if False:
         print model.inputs[0].name
         print model.outputs[-1].name
 
-        freeze_var_names = list(set(v.op.name for v in tf.global_variables())) #.difference([]))
+        freeze_var_names = list(set(v.op.name for v in tf.global_variables()))
         output_names = [out.op.name for out in model.outputs] + [v.op.name for v in tf.global_variables()]
         input_graph_def = sess.graph.as_graph_def()
 
