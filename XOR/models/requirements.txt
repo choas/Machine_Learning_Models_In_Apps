@@ -1,0 +1,7 @@
+# pip install -r requirements.txt
+tensorflow==1.10.1
+Keras==2.1.6
+coremltools==0.8
+tfcoreml==0.2.0
+jupyter==1.0.0
+pydot==1.2.4
