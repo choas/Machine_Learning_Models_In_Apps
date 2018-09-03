@@ -68,12 +68,12 @@ print model.predict(training_data)
 #print model.predict(training_data).round()
 
 
-# ## Tensorflow
+# ## TensorFlow
 
 # In[9]:
 
 
-### save as Tensorflow and Tensorflow Lite
+### save as TensorFlow and TensorFlow Lite
 if False:
     with sess.graph.as_default():
 
@@ -113,7 +113,7 @@ tf.train.write_graph(frozen_graph, "models", "xor.pb", as_text=False)
 print "xor.pb written"
 
 
-# ## Tensorflow Lite
+# ## TensorFlow Lite
 
 # In[11]:
 

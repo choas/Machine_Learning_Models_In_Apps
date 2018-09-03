@@ -2,11 +2,11 @@
 
 For an english introduction, please see [README_EN.md](./README_EN.md).
 
-Dieses Repository enthält zwei Projekte zur Demonstration von Machine Learning Modellen in Apps, mit jeweils einem Beispiel für iOS mit CoreML und Android mit Tensorflow Lite:
+Dieses Repository enthält zwei Projekte zur Demonstration von Machine Learning Modellen in Apps, mit jeweils einem Beispiel für iOS mit CoreML und Android mit TensorFlow Lite:
 
 - Das [InceptionV3 Beispiel](./InceptionV3/README.md) erkennt fest hiterlegte Bilder, wie einen Elefanten, ein Gänseblümchen und Erdbeeren (eigentlich Himbeeren).
 
-- Das [XOR Beispiel](./XOR/README.md) ist eine einfacher XOR-Vergleich. Zusätzlich ist eine Keras Modell enthalten, um das CoreML und Tensorflow Lite Modell zu erstellen.
+- Das [XOR Beispiel](./XOR/README.md) ist eine einfacher XOR-Vergleich. Zusätzlich ist eine Keras Modell enthalten, um das CoreML und TensorFlow Lite Modell zu erstellen.
 
 Die jeweiligen Beispiele enthalten ihre eigene README Datei mit weiteren Informationen.
 
