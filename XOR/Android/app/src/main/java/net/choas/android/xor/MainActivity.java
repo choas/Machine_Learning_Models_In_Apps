@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.res.AssetFileDescriptor;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,6 +15,9 @@ import org.tensorflow.lite.Interpreter;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String modelFile="xor.tflite";
+
     private Interpreter tflite;
 
     public MainActivity() {
@@ -30,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
         TextView result11 = findViewById(R.id.result1xor1);
 
         try {
-            tflite = new Interpreter(loadModelFile("xor.tflite"));
+            tflite = new Interpreter(loadModelFile(modelFile));
         } catch (IOException e) {
             e.printStackTrace();
+            Toast.makeText(this, "model file " + modelFile + " is missing", Toast.LENGTH_LONG).show();
+            return;
         }
 
         result00.setText(prediction(0, 0));

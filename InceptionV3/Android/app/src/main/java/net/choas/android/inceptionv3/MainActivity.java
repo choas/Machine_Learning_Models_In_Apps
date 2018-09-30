@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
             tflite = new Interpreter(loadModelFile(modelFile));
         } catch (IOException e) {
             e.printStackTrace();
+            Toast.makeText(this, "model file " + modelFile + " is missing", Toast.LENGTH_LONG).show();
+            return;
         }
 
         final Context context = this;
