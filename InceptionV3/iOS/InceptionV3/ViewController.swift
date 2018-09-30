@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let model = try? VNCoreMLModel(for: Inceptionv3().model)
-        let request = VNCoreMLRequest(model: model!,
+        let model = try! VNCoreMLModel(for: Inceptionv3().model)
+        let request = VNCoreMLRequest(model: model,
                                   completionHandler: resHandler)
         requests.append(request)
     }
