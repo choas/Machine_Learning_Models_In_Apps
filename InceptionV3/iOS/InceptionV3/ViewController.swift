@@ -10,21 +10,23 @@ import UIKit
 import Vision
 
 class ViewController: UIViewController {
-    
+
     var requests: [VNRequest] = []
-    
+
     @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let model = try! VNCoreMLModel(for: Inceptionv3().model)
+        guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
+            print("model not found")
+            return
+        }
         let request = VNCoreMLRequest(model: model,
                                   completionHandler: resHandler)
         requests.append(request)
     }
-    
+
     @IBAction func predict(_ sender: UIButton) {
         selectedImage.image = sender.currentImage
         let image = sender.currentImage!.cgImage!
@@ -32,25 +34,26 @@ class ViewController: UIViewController {
                                             options: [:])
         try? handler.perform(requests)
     }
-    
+
     func resHandler(request: VNRequest, _: Error?) {
-        let results = request.results
-            as! [VNClassificationObservation]
+        guard let results = request.results as? [VNClassificationObservation] else {
+            print("request is not a VNClassificationObservation")
+            return
+        }
         let percent = Int(results[0].confidence * 100)
         let identifier = results[0].identifier
         resultLabel.text = "\(percent)% \(identifier)"
     }
 
-    
     func resHandler000(request: VNRequest, error: Error?) {
-        
+
         guard let results = request.results as? [VNClassificationObservation] else {
             return
         }
 
         print("------------")
-        for i in 0..<5 {
-            print("\(results[i].identifier) \(results[i].confidence)")
+        for index in 0..<5 {
+            print("\(results[index].identifier) \(results[index].confidence)")
         }
 
         self.resultLabel.text = "\(Int(results[0].confidence * 100))% \(results[0].identifier)"
