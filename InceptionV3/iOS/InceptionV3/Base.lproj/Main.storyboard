@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14111" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,48 +13,78 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InceptionV3_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InceptionV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcd-kb-SSD">
-                                <rect key="frame" x="38" y="83" width="84" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcd-kb-SSD" userLabel="ButtonA">
+                                <rect key="frame" x="20" y="179.33333333333334" width="118" height="88.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Hcd-kb-SSD" secondAttribute="height" multiplier="4:3" id="ld9-uq-Xei"/>
+                                </constraints>
                                 <state key="normal" image="elephant-114543_640"/>
                                 <connections>
                                     <action selector="predict:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oOI-MZ-XPe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUR-Vq-vDW">
-                                <rect key="frame" x="145" y="83" width="84" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3x-dp-N24" userLabel="ButtonB">
+                                <rect key="frame" x="148" y="179" width="36" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="D3x-dp-N24" secondAttribute="height" multiplier="4:3" id="ECQ-G8-VIv"/>
+                                </constraints>
                                 <state key="normal" image="floral-50157_640"/>
-                                <connections>
-                                    <action selector="predict:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RRQ-KT-NJe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3x-dp-N24">
-                                <rect key="frame" x="253" y="83" width="84" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="raspberries-1495713_640"/>
                                 <connections>
                                     <action selector="predict:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e76-GD-ilM"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gdN-aJ-A9k">
-                                <rect key="frame" x="38" y="212" width="299" height="299"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUR-Vq-vDW" userLabel="ButtonC">
+                                <rect key="frame" x="276" y="179" width="22" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qUR-Vq-vDW" secondAttribute="height" multiplier="4:3" id="l0y-oT-BaV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="nbN-Dv-Fwu"/>
+                                </constraints>
+                                <state key="normal" image="raspberries-1495713_640"/>
+                                <connections>
+                                    <action selector="predict:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RRQ-KT-NJe"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gdN-aJ-A9k">
+                                <rect key="frame" x="20" y="312.66666666666663" width="374" height="280.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gdN-aJ-A9k" secondAttribute="height" multiplier="4:3" id="fv4-Ta-oza"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAW-gm-ddH">
-                                <rect key="frame" x="38" y="552" width="299" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAW-gm-ddH">
+                                <rect key="frame" x="20" y="618.33333333333337" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="R0G-4J-bzT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="D3x-dp-N24" firstAttribute="width" secondItem="Hcd-kb-SSD" secondAttribute="width" id="3mh-NU-iYx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="gdN-aJ-A9k" secondAttribute="centerY" id="9ki-re-55F"/>
+                            <constraint firstItem="D3x-dp-N24" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hcd-kb-SSD" secondAttribute="trailing" constant="10" id="AKV-qX-Slj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yAW-gm-ddH" secondAttribute="trailing" constant="20" id="Dsh-kd-I3N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gdN-aJ-A9k" secondAttribute="trailing" constant="20" id="HJI-ih-U3R"/>
+                            <constraint firstItem="Hcd-kb-SSD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KjV-7w-8Ln"/>
+                            <constraint firstItem="gdN-aJ-A9k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Lf9-AV-rAf"/>
+                            <constraint firstItem="yAW-gm-ddH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QZp-Y8-LJH"/>
+                            <constraint firstItem="gdN-aJ-A9k" firstAttribute="top" secondItem="qUR-Vq-vDW" secondAttribute="bottom" constant="45" id="R5s-8a-Gis"/>
+                            <constraint firstItem="D3x-dp-N24" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SvU-4E-QoM"/>
+                            <constraint firstItem="gdN-aJ-A9k" firstAttribute="leading" secondItem="Hcd-kb-SSD" secondAttribute="leading" id="Uhj-MW-WD6"/>
+                            <constraint firstItem="gdN-aJ-A9k" firstAttribute="top" secondItem="Hcd-kb-SSD" secondAttribute="bottom" constant="45" id="aKY-xg-OpM"/>
+                            <constraint firstItem="yAW-gm-ddH" firstAttribute="top" secondItem="gdN-aJ-A9k" secondAttribute="bottom" constant="25" id="foG-Zj-QKG"/>
+                            <constraint firstItem="qUR-Vq-vDW" firstAttribute="width" secondItem="Hcd-kb-SSD" secondAttribute="width" id="jQP-4k-8kO"/>
+                            <constraint firstItem="yAW-gm-ddH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="jiM-Id-n4T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qUR-Vq-vDW" secondAttribute="trailing" constant="20" id="pGo-9v-8oE"/>
+                            <constraint firstItem="gdN-aJ-A9k" firstAttribute="top" secondItem="D3x-dp-N24" secondAttribute="bottom" constant="45" id="qeQ-M8-tK1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -63,12 +94,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="37.681159420289859" y="-11.383928571428571"/>
         </scene>
     </scenes>
     <resources>
         <image name="elephant-114543_640" width="640" height="480"/>
-        <image name="floral-50157_640" width="640" height="427"/>
-        <image name="raspberries-1495713_640" width="640" height="426"/>
+        <image name="floral-50157_640" width="640" height="480"/>
+        <image name="raspberries-1495713_640" width="640" height="480"/>
     </resources>
 </document>
