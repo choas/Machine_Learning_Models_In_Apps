@@ -40,6 +40,10 @@ class ViewController: UIViewController {
             print("request is not a VNClassificationObservation")
             return
         }
+        results[0..<5].forEach{ (result) in
+            print(String(format: "%.1f%% %@", result.confidence * 100, result.identifier))
+        }
+        print("-----------------")
         let percent = Int(results[0].confidence * 100)
         let identifier = results[0].identifier
         resultLabel.text = "\(percent)% \(identifier)"
