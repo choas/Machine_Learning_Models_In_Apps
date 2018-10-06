@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         }
         let request = VNCoreMLRequest(model: model,
                                   completionHandler: resHandler)
-        requests.append(request)
+        self.requests.append(request)
     }
 
     @IBAction func predict(_ sender: UIButton) {
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         let image = sender.currentImage!.cgImage!
         let handler = VNImageRequestHandler(cgImage: image,
                                             options: [:])
-        try? handler.perform(requests)
+        try? handler.perform(self.requests)
     }
 
     func resHandler(request: VNRequest, _: Error?) {
@@ -44,22 +44,4 @@ class ViewController: UIViewController {
         let identifier = results[0].identifier
         resultLabel.text = "\(percent)% \(identifier)"
     }
-
-    func resHandler000(request: VNRequest, error: Error?) {
-
-        guard let results = request.results as? [VNClassificationObservation] else {
-            return
-        }
-
-        print("------------")
-        for index in 0..<5 {
-            print("\(results[index].identifier) \(results[index].confidence)")
-        }
-
-        self.resultLabel.text = "\(Int(results[0].confidence * 100))% \(results[0].identifier)"
-        let percent = Int(results[0].confidence * 100)
-        let identifier = results[0].identifier
-        resultLabel.text = "\(percent)% \(identifier)"
-    }
-
 }
