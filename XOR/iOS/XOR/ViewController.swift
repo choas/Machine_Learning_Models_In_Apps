@@ -16,8 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var out10: UILabel!
     @IBOutlet weak var out11: UILabel!
 
-    let model = xor()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,15 +25,15 @@ class ViewController: UIViewController {
         out11.text = "\(predict(1, 1))"
     }
 
-    func predict(_ value1: Int, _ value2: Int) -> NSNumber {
+    func predict(_ value1: NSNumber, _ value2: NSNumber) -> NSNumber {
         guard let inputData = try? MLMultiArray(shape: [2], dataType: MLMultiArrayDataType.float32) else {
             return -1
         }
-        inputData[0] = NSNumber(value: value1)
-        inputData[1] = NSNumber(value: value2)
+        inputData[0] = value1
+        inputData[1] = value2
 
         let input = xorInput(input: inputData)
-        if let prediction = try? model.prediction(input: input) {
+        if let prediction = try? xor().prediction(input: input) {
             return prediction.result[0]
         }
         return -1
