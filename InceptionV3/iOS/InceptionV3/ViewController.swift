@@ -40,7 +40,7 @@ class ViewController: UIViewController {
             print("request is not a VNClassificationObservation")
             return
         }
-        results[0..<5].forEach{ (result) in
+        results[0..<5].forEach { (result) in
             print(String(format: "%.1f%% %@", result.confidence * 100, result.identifier))
         }
         print("-----------------")
