@@ -2,6 +2,8 @@
 
 Eine deutsche Anleitung finden Sie unter  [README.md](./README.md).
 
+Source Code of the (German) online article [https://www.heise.de/developer/artikel/Trainierte-Modelle-in-mobilen-Apps-einsetzen-4245826.html](Trainierte Modelle in mobilen Apps einsetzen) at heise Developer.
+
 This repository contains two projects that demonstrate machine learning models in apps, each with an example for iOS with CoreML and Android with TensorFlow Lite.
 
 - The [InceptionV3](./InceptionV3/README_EN.md) example recognizes fixed images such as an elephant, a daisy and strawberries (in fact raspberries).
