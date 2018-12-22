@@ -39,9 +39,9 @@ target_data   = np.array([  [0],   [1],   [1],   [0]])
 
 
 model = Sequential()
-model.add(Dense(8, input_dim=2, activation=sigmoid))
-model.add(Dense(1, activation=sigmoid))
-model.compile(loss=mean_squared_error, optimizer=SGD(lr=1))
+model.add(Dense(8, input_dim=2, activation='sigmoid'))
+model.add(Dense(1, activation='sigmoid'))
+model.compile(loss='mean_squared_error', optimizer=SGD(lr=1), metrics=['accuracy'])
 
 
 # In[5]:
@@ -50,27 +50,29 @@ model.compile(loss=mean_squared_error, optimizer=SGD(lr=1))
 from IPython.display import SVG
 from keras.utils.vis_utils import model_to_dot
 
-SVG(model_to_dot(model,show_shapes=True,rankdir='LR').create(prog='dot', format='svg'))
+SVG(model_to_dot(model, show_shapes=True, rankdir='LR').create(prog='dot', format='svg'))
 
 
-# In[7]:
+# In[6]:
 
 
 epochs = 2000
 model.fit(training_data, target_data, epochs=epochs)
 
 
-# In[8]:
+# In[7]:
 
 
-print model.evaluate(x=training_data, y=target_data, verbose=0)
+print "loss:", model.evaluate(x=training_data, y=target_data, verbose=0)
+print ""
 print model.predict(training_data)
-#print model.predict(training_data).round()
+print ""
+print model.predict(training_data).round()
 
 
 # ## TensorFlow
 
-# In[9]:
+# In[8]:
 
 
 ### save as TensorFlow and TensorFlow Lite
@@ -96,7 +98,7 @@ if False:
         print "xor.pb written"
 
 
-# In[10]:
+# In[9]:
 
 
 ### freeze model and save as Tensorflow 
@@ -115,7 +117,7 @@ print "xor.pb written"
 
 # ## TensorFlow Lite
 
-# In[11]:
+# In[10]:
 
 
 ## use another graph and import the frozen graph 
@@ -135,7 +137,7 @@ with fgraph.as_default():
 
 # ## CoreML
 
-# In[12]:
+# In[11]:
 
 
 import tfcoreml
@@ -146,8 +148,6 @@ coreml_model = tfcoreml.convert(
         input_name_shape_dict={model.inputs[0].name:[1,2]},
         output_feature_names=[model.outputs[0].name])
 
-
-
 print "---"
 print coreml_model.input_description
 print coreml_model.get_spec
@@ -155,12 +155,8 @@ print coreml_model.get_spec
 #print spec.description
 print coreml_model.predict({model.inputs[0].name.replace(':', '__').replace('/', '_Q_'): [0.0, 0.0]})
 
-
-coreml_model.author = 'AU_THOR'
-
+coreml_model.author = 'AUTHOR'
 coreml_model.save('models/xor.mlmodel')
-
-
 
 #print model.inputs[0].name.replace(':', '__').replace('/', '__')
 #print model.outputs[0].name.replace(':', '__').replace('/', '__')
@@ -168,7 +164,7 @@ coreml_model.save('models/xor.mlmodel')
 
 # ### CoreML Tools Keras
 
-# In[13]:
+# In[12]:
 
 
 ### save as CoreML with Keras converter
